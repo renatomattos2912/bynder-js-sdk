@@ -3,7 +3,6 @@ const eslint = require('gulp-eslint');
 const babel = require('gulp-babel');
 const jasmine = require('gulp-jasmine');
 const jsdoc = require('gulp-jsdoc3');
-const connect = require('gulp-connect');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -80,10 +79,4 @@ gulp.task('jasmine', () => {
 gulp.task('doc', (cb) => {
     gulp.src(['README.md', 'src/*.js'], { read: false })
         .pipe(jsdoc(cb));
-});
-
-gulp.task('webserver', () => {
-    connect.server({
-        port: 8080
-    });
 });
